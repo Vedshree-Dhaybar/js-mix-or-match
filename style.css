@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Miltonian+Tattoo&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Miltonian Tattoo", serif;
+    color: var(--text-color);
+}
+
+:root {
+    --bg-color: linear-gradient(180deg, #0A1C30, #0F3045, #1E6A82);
+    --card-color: #2A3765;
+    --text-color: #fff;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+
+.blur-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+    z-index: 1;
+}
+
+.title {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 100;
+    width: 90%;
+    max-width: 1000px;
+}
+
+.title h1 {
+    font-size: 110px;
+}
+
+.title h2 {
+    font-size: 40px;
+}
+
+
+.main {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(180deg, #0A1C30, #0F3045, #1E6A82);
+}
+
+.main h1 {
+    font-size: 60px;
+    margin: 20px;
+    text-align: center;
+}
+
+.details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 170px;
+}
+
+.cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    flex-wrap: wrap;
+    margin-bottom: -200px;
+}
+
+.card-container {
+    perspective: 1000px;
+}
+
+.card {
+    height: 110px;
+    width: 80px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    margin: 5px;
+}
+
+.card img {
+    height: 100%;
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.front,
+.back {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border-radius: 12px;
+    border: 2px solid #D4D4D4;
+    background: #2A3765;
+    backface-visibility: hidden;
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+.back img {
+    height: 80%;
+    width: 80%;
+    margin: 10px;
+
+}
+
+
+@media only screen and (max-width: 767px) {
+
+
+    /* .title {
+        left: 8%;
+        transform: translate(-3%, -50%);
+    } */
+
+    .title h1 {
+        font-size: 80px;
+    }
+
+    .title h2 {
+        font-size: 35px;
+    }
+
+    .main h1 {
+        font-size: 40px;
+    }
+
+    .details {
+        margin: 20px;
+    }
+
+    .details h2 {
+        font-size: 20px;
+    }
+
+    .cards {
+        width: 100%;
+        margin: 10px;
+    }
+
+    .card {
+        height: 100px;
+        width: 80px;
+    }
+
+}
